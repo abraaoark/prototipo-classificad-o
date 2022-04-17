@@ -4,8 +4,9 @@
                 include("conexao.php");
                 $query = "SELECT * FROM tgp";
                 $result = mysqli_query($link, $query);
-                //while($array = mysqli_fetch_assoc($result)){
+                while($array = mysqli_fetch_assoc($result)){
             ?>
+            <?php } ?>
             
 <head></head>
 
