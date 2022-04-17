@@ -52,18 +52,20 @@ include 'upload.php'
                while($array = mysqli_fetch_assoc($result)){
           ?>
           
-            <div class="col-md-3" style=""><img class="img-thumbnail" src="src/<?=$array['nomeim']?>" style="float: left; margin: 25px" alt="tgp" width="250px"> <br>
-
+            <div class="col-md-3" style="float: right:210px; top:-120px; left:30px; margin: 56px"><img class="img-fluid d-block my-1 mx-1 img-thumbnail" src="src/<?=$array['nomeim']?>" style=""  width="150px"> <br>
+            
+            </div> <?php } ?> 
               <div class="col-md-12">
-
-              
                 <input name = "arquivo" type="file">
+                <br>
+                <br>
                 <button type="submit" class="btn btn-primary" id="arquivo" value="arquivo">salvar</button>
               </div>
-            </div>
+            
           </form>
+         
         </div>
-        <?php } ?>
+       
         <div class="col-md-6">
           <form method="POST" action=".php" enctype="multipart/form-data" id="c_form-h" class="">
             <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Nome</label>
