@@ -52,7 +52,7 @@ include 'upload.php'
                while($array = mysqli_fetch_assoc($result)){
           ?>
           
-            <div class="col-md-3" style="float: right:210px; top:-120px; left:30px; margin: 56px"><img class="img-fluid d-block my-1 mx-1 img-thumbnail" src="src/<?=$array['nomeim']?>" style=""  width="150px"> <br>
+            <div class="col-md-3" style="float: right:210px; top:0x; left:30px; margin: 56px"><img class="img-fluid d-block my-1 mx-1 img-thumbnail" src="src/<?=$array['nomeim']?>" style=""  width="150px"> <br>
             
             </div> <?php } ?> 
               <div class="col-md-12">

@@ -46,7 +46,14 @@ $con = $mysqli->query($consulta) or die ($mysqli->error);
       <div class="row">
         <div class="col-md-12">
           <div class="row">
-            <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0"> <img class="img-fluid d-block my-4 img-thumbnail border border-info rounded-lg" src="../src/unnamed (2).jpg"> </div>
+          <?php 
+                include_once 'conexao.php';
+                $query = "SELECT * FROM anuciante";
+                $result = mysqli_query($link, $query);
+               while($array = mysqli_fetch_assoc($result)){
+          ?>
+          
+            <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0"> <img class="img-fluid d-block my-4 img-thumbnail border border-info rounded-lg" src="src/<?=$array['nomeim']?>" style=""  width="150px"> <br> </div><?php } ?> 
             <div class="d-flex flex-column justify-content-center p-3 col-md-6 offset-lg-1 align-items-start order-1 order-md-2" style="">
               <h3><b><u>Perfil</u></b>:&nbsp;<br><br><b>Nome</b>:<?php echo $dado["AN_nome"];?>&nbsp;&nbsp;<br><br><b>Email</b>:<?php echo $dado["AN_email"];?>&nbsp;<br><br><b>Telefone</b>:<?php echo $dado["AN_telefone"];?>&nbsp;<br><br><b>Profissão</b>: Cuidadora de Idosos</h3>
               <a class="btn btn-primary" href="EditarPerfil.php"><i class="fa fa-user fa-fw"></i>Editar Perfil</a>
