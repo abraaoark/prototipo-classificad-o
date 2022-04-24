@@ -1,0 +1,107 @@
+import React, { Component, useEffect, useState } from "react";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbarcomponentes from './componentes/Navbarcomponentes';
+import API from './api'
+
+
+  
+
+class App extends Component{
+
+state={
+  
+  livros:{}
+}
+
+
+async componentDidMount ()
+{
+
+const response = await API.get('https://fakerapi.it/api/v1/books')
+
+//console.log(response.data);
+
+this.setState({livros:response.data})
+
+}
+render(){
+
+  const{livros} = this.state
+//  console.log(livros)
+    
+return(
+<div>
+
+
+
+<h1>lista</h1>
+<ul>
+{livros.map(livros=>(
+
+<li>
+<h2>titulo:{livros.title}</h2>
+</li>
+
+)) }
+</ul>
+
+
+
+
+
+</div>
+);
+
+}
+
+}
+
+
+export default App;
+
+
+
+
+
+
+
+import React, { Component, useEffect, useState } from "react";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbarcomponentes from './componentes/Navbarcomponentes';
+import API from './api'
+
+
+
+function App() {
+  const [user, setUser] = useState();
+  
+  return (
+
+
+    
+    <div className="App">
+      
+      
+      <Navbarcomponentes />
+    
+    </div>
+  );  
+ } 
+
+export default App;
+
+
+<h2>Listar os livros</h2>
+        {livros.map (livros => (
+          <li key={livros.show.id}>
+            <h2>
+               <strong>Título: </strong>
+              {livros.show.name}
+               </h2>
+               <p>
+              {livros.show.url}
+            </p>
+          </li>
+        ))}
